@@ -15,7 +15,7 @@ test_generator = test_datagen.flow_from_directory(
     target_size = (IMAGE_SIZE, IMAGE_SIZE),
     batch_size = BATCH_SIZE)
 
-model = tf.keras.models.load_model('models/first_train')
+model = tf.keras.models.load_model('../models/first_train')
 
 true_labels = test_generator.classes
 probabilities = model.predict_generator(test_generator)
