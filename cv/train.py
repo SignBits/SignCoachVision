@@ -78,7 +78,7 @@ history = model.fit_generator(train_generator,
                     epochs=epochs, 
                     validation_data=val_generator)
 
-model_path = './checkpoints/third_demo_train'
+model_path = '../models/checkpoints/third_demo_train'
 model.save(model_path)
 
 print(history.history.keys())

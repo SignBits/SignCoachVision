@@ -1,7 +1,6 @@
-from __future__ import print_function
 import cv2 as cv
 
-def subtractBackground(inFileLoc: str, outFileLoc: str, varThreshold = 16, detectShadows=False):
+def subtractBackground(inFileLoc: str, outFileLoc: str, varThreshold = 12, detectShadows=False):
     backSub = cv.createBackgroundSubtractorMOG2(varThreshold=varThreshold, detectShadows=detectShadows)
     capture = cv.VideoCapture(inFileLoc)
 
@@ -9,7 +8,7 @@ def subtractBackground(inFileLoc: str, outFileLoc: str, varThreshold = 16, detec
     height = int(capture.get(cv.CAP_PROP_FRAME_HEIGHT))
     fps = int(capture.get(cv.CAP_PROP_FPS))
 
-    out = cv.VideoWriter(outFileLoc, cv.VideoWriter_fourcc(*'XVID'), fps, (width, height))
+    out = cv.VideoWriter(outFileLoc, cv.VideoWriter_fourcc(*'CYUV'), fps, (width, height))
 
     if not capture.isOpened():
         raise FileNotFoundError('Unable to open: ' + 'video0.mp4')
