@@ -12,8 +12,9 @@ jupyter = "*"
 ipykernel = "*"
 pillow = "*"
 split-folders = "*"
-tensorflow-gpu = "==1.14.0"
+tensorflow = "*"
 scikit-learn = "*"
+opencv-python-headless = "*"
 
 [requires]
 python_version = "3.6"
